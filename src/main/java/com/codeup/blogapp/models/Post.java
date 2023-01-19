@@ -15,6 +15,17 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
+    @OneToOne
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Post(){}
 
     public Post(long id, String title, String body) {
