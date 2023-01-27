@@ -9,6 +9,15 @@
 		<h1 th:text="${post.title}"></h1>
 		<h3 th:text="${post.user.email}"></h3>
 		<p th:text="${post.body}"></p>
+		<form th:action="@{/posts/edit}" th:method="get">
+			<input type="hidden" name="id" th:value="${post.id}">
+			<button type="submit">Edit Post</button>
+		</form>
+
+<!--		<form th:action="/posts/delete" method="post">-->
+<!--			<input type="hidden" name="id" th:value="${post.id}">-->
+<!--			<button type="submit">Delete Post</button>-->
+<!--		</form>-->
 	</div>
 </body>
 </html>
